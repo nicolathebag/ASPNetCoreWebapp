@@ -1,0 +1,265 @@
+Retrieving builders.
+Getting Gcloud Login State.
+Using picked GCP Project "ecommerce-430516"
+Checking Cloud Run API status.
+Using current GCP Project "ecommerce-430516"
+Checking Cloud Run API status.
+Getting Cloud Run Services for project "ecommerce-430516".
+Getting Cloud Run Services for project "ecommerce-430516".
+Executing Skaffold build.
+Running skaffold command: /usr/bin/skaffold init --artifact {"image":"gcr.io/ecommerce-430516/hello-world-1","builder":"Docker","payload":{"path":"Dockerfile"}} --skip-deploy --filename /tmp/cloud-code-cloud-run-LHR3VQ/skaffold.yaml --force
+Setting build tagPolicy to SHA256.
+Setting statusCheckDeadlineSeconds to 5 minutes
+Setting build environment to 'local'
+Created the file /tmp/cloud-code-cloud-run-LHR3VQ/skaffold.yaml.
+Running skaffold command: build --filename /tmp/cloud-code-cloud-run-LHR3VQ/skaffold.yaml --kube-context='' --platform=linux/amd64
+Generating tags...
+ - gcr.io/ecommerce-430516/hello-world-1 -> gcr.io/ecommerce-430516/hello-world-1:latest
+Checking cache...
+- gcr.io/ecommerce-430516/hello-world-1:
+Not found. Building
+Starting build...
+Building [gcr.io/ecommerce-430516/hello-world-1]...
+Target platforms: [linux/amd64]
+Sending build context to Docker daemon  454.7kB
+Step 1/14 : FROM mcr.microsoft.com/dotnet/aspnet:7.0-alpine AS base
+7.0-alpine: Pulling from dotnet/aspnet
+4abcf2066143: Pulling fs layer
+fa849eb37cee: Pulling fs layer
+b39392ca8d29: Pulling fs layer
+fcb8a05043f0: Pulling fs layer
+fcb8a05043f0: Waiting
+fa849eb37cee: Verifying Checksum
+fa849eb37cee: Download complete
+4abcf2066143: Verifying Checksum
+4abcf2066143: Download complete
+4abcf2066143: Pull complete
+b39392ca8d29: Verifying Checksum
+b39392ca8d29: Download complete
+fcb8a05043f0: Verifying Checksum
+fcb8a05043f0: Download complete
+fa849eb37cee: Pull complete
+b39392ca8d29: Pull complete
+fcb8a05043f0: Pull complete
+Digest: sha256:4328f4d60da5d18ca8d3ba816f58a3a4e521e614728c7b6e36f96cfc09a68004
+Status: Downloaded newer image for mcr.microsoft.com/dotnet/aspnet:7.0-alpine
+---> 06b5b322b06e
+Step 2/14 : WORKDIR /src
+---> Running in 7853fb348bce
+---> 7b06e80d80c0
+Step 3/14 : FROM mcr.microsoft.com/dotnet/sdk:7.0-alpine AS build
+7.0-alpine: Pulling from dotnet/sdk
+4abcf2066143: Already exists
+fa849eb37cee: Already exists
+b39392ca8d29: Already exists
+fcb8a05043f0: Already exists
+55fbbc5b5531: Pulling fs layer
+b31fc6dff3c8: Pulling fs layer
+356b37bb9c1c: Pulling fs layer
+356b37bb9c1c: Verifying Checksum
+356b37bb9c1c: Download complete
+55fbbc5b5531: Verifying Checksum
+55fbbc5b5531: Download complete
+55fbbc5b5531: Pull complete
+b31fc6dff3c8: Verifying Checksum
+b31fc6dff3c8: Download complete
+b31fc6dff3c8: Pull complete
+356b37bb9c1c: Pull complete
+Digest: sha256:1478c99b4bed8d297ccd000e0fdaf060cdfb281779f8c8aa47f031a09503c0d4
+Status: Downloaded newer image for mcr.microsoft.com/dotnet/sdk:7.0-alpine
+---> 8dee056eeca6
+Step 4/14 : WORKDIR /src
+---> Running in 94d0b37cdad9
+---> f95c810df737
+Step 5/14 : COPY . .
+
+---> 29d66b206c11
+Step 6/14 : RUN dotnet restore dotnet-cloud-run-hello-world.csproj
+---> Running in e833526a35a5
+Determining projects to restore...
+Restored /src/dotnet-cloud-run-hello-world.csproj (in 137 ms).
+---> 3cda9a99aa3e
+Step 7/14 : RUN dotnet build "./dotnet-cloud-run-hello-world.csproj" -c Debug -o /out
+---> Running in 03285593671f
+MSBuild version 17.7.6+77d58ec69 for .NET
+Determining projects to restore...
+All projects are up-to-date for restore.
+dotnet-cloud-run-hello-world -> /out/dotnet-cloud-run-hello-world.dll
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+Time Elapsed 00:00:07.45
+---> a441daecfe5f
+Step 8/14 : FROM build AS publish
+---> a441daecfe5f
+Step 9/14 : RUN dotnet publish dotnet-cloud-run-hello-world.csproj -c Debug -o /out
+---> Running in 7d88e54683b3
+MSBuild version 17.7.6+77d58ec69 for .NET
+Determining projects to restore...
+All projects are up-to-date for restore.
+dotnet-cloud-run-hello-world -> /src/bin/Debug/net7.0/dotnet-cloud-run-hello-world.dll
+dotnet-cloud-run-hello-world -> /out/
+---> 75137e73ddce
+Step 10/14 : FROM base AS final
+---> 7b06e80d80c0
+Step 11/14 : RUN apk update     && apk add unzip procps
+---> Running in 8598630a1ef7
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.19/community/x86_64/APKINDEX.tar.gz
+v3.19.3-13-ge6ea13a261f [https://dl-cdn.alpinelinux.org/alpine/v3.19/main]
+v3.19.3-12-g0fedf4c554c [https://dl-cdn.alpinelinux.org/alpine/v3.19/community]
+OK: 23038 distinct packages available
+(1/5) Installing ncurses-terminfo-base (6.4_p20231125-r0)
+(2/5) Installing libncursesw (6.4_p20231125-r0)
+(3/5) Installing libproc2 (4.0.4-r0)
+(4/5) Installing procps-ng (4.0.4-r0)
+(5/5) Installing unzip (6.0-r14)
+Executing busybox-1.36.1-r15.trigger
+OK: 14 MiB in 29 packages
+---> 1ea07319db98
+Step 12/14 : WORKDIR /src
+---> Running in 456a171c6852
+---> 431192a28998
+Step 13/14 : COPY --from=publish /out .
+---> d0f5e944a31f
+Step 14/14 : CMD ASPNETCORE_URLS=http://*:$PORT dotnet dotnet-cloud-run-hello-world.dll
+---> Running in 653c66025176
+---> 2a01d2db9f07
+Successfully built 2a01d2db9f07
+Successfully tagged gcr.io/ecommerce-430516/hello-world-1:latest
+The push refers to repository [gcr.io/ecommerce-430516/hello-world-1]
+c824acbf4b6f: Preparing
+ad1ea21bec32: Preparing
+6910687b3c59: Preparing
+ad8ad0c27016: Preparing
+ded98abd779b: Preparing
+041b6f6a3cb2: Preparing
+041b6f6a3cb2: Waiting
+d4fc045c9e3a: Preparing
+d4fc045c9e3a: Waiting
+c824acbf4b6f: Pushed
+6910687b3c59: Pushed
+ad1ea21bec32: Pushed
+d4fc045c9e3a: Layer already exists
+041b6f6a3cb2: Layer already exists
+ad8ad0c27016: Pushed
+ded98abd779b: Pushed
+latest: digest: sha256:32176e919c7816cee4cbf8b7b00d116bb6d17548bdab695f69b3cf09cece329a size: 1790
+Build [gcr.io/ecommerce-430516/hello-world-1] succeeded
+Executing Gcloud Run Deploy
+Running gcloud command: run deploy hello-world-1 --project ecommerce-430516 --image gcr.io/ecommerce-430516/hello-world-1 --client-name Cloud Code for VS Code --client-version 2.14.0 --platform managed --region us-central1 --allow-unauthenticated --port 8080 --cpu 1 --memory 256Mi --concurrency 80 --timeout 300 --clear-env-vars
+Deploying container to Cloud Run service [hello-world-1] in project [ecommerce-430516] region [us-central1]
+Deploying new service...
+Setting IAM Policy......................done
+Retrieving builders.
+Getting Gcloud Login State.
+Using current GCP Project "ecommerce-430516"
+Checking Cloud Run API status.
+Getting Cloud Run Services for project "ecommerce-430516".
+Executing Skaffold build.
+Running skaffold command: /usr/bin/skaffold init --artifact {"image":"gcr.io/ecommerce-430516/hello-world-1","builder":"Docker","payload":{"path":"Dockerfile"}} --skip-deploy --filename /tmp/cloud-code-cloud-run-ncXRsk/skaffold.yaml --force
+Setting build tagPolicy to SHA256.
+Setting statusCheckDeadlineSeconds to 5 minutes
+Setting build environment to 'local'
+Created the file /tmp/cloud-code-cloud-run-ncXRsk/skaffold.yaml.
+Running skaffold command: build --filename /tmp/cloud-code-cloud-run-ncXRsk/skaffold.yaml --kube-context='' --platform=linux/amd64
+Generating tags...
+ - gcr.io/ecommerce-430516/hello-world-1 ->
+gcr.io/ecommerce-430516/hello-world-1:latest
+Checking cache...
+- gcr.io/ecommerce-430516/hello-world-1: Not found. Building
+Starting build...
+Building [gcr.io/ecommerce-430516/hello-world-1]...
+Target platforms: [linux/amd64]
+Creating Revision............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................done
+Routing traffic.....done
+Done.
+Service [hello-world-1] revision [hello-world-1-00001-r5m] has been deployed and is serving 100 percent of traffic.
+Service URL: https://hello-world-1-vny2zcitvq-uc.a.run.app
+Sending build context to Docker daemon  466.9kB
+Step 1/14 : FROM mcr.microsoft.com/dotnet/aspnet:7.0-alpine AS base
+---> 06b5b322b06e
+Step 2/14 : WORKDIR /src
+---> Using cache
+ ---> 7b06e80d80c0
+Step 3/14 : FROM mcr.microsoft.com/dotnet/sdk:7.0-alpine AS build
+---> 8dee056eeca6
+Step 4/14 : WORKDIR /src
+---> Using cache
+ ---> f95c810df737
+Step 5/14 : COPY . .
+---> ce76d537a653
+Step 6/14 : RUN dotnet restore dotnet-cloud-run-hello-world.csproj
+
+---> Running in 736931e5cd50
+Determining projects to restore...
+Restored /src/dotnet-cloud-run-hello-world.csproj (in 132 ms).
+---> 3654f3221454
+Step 7/14 : RUN dotnet build "./dotnet-cloud-run-hello-world.csproj" -c Debug -o /out
+---> Running in 45e2fa6059de
+MSBuild version 17.7.6+77d58ec69 for .NET
+Determining projects to restore...
+All projects are up-to-date for restore.
+dotnet-cloud-run-hello-world -> /out/dotnet-cloud-run-hello-world.dll
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+Time Elapsed 00:00:07.45
+---> 0078dcc073a3
+Step 8/14 : FROM build AS publish
+---> 0078dcc073a3
+Step 9/14 : RUN dotnet publish dotnet-cloud-run-hello-world.csproj -c Debug -o /out
+---> Running in 0a0e02050c06
+MSBuild version 17.7.6+77d58ec69 for .NET
+Determining projects to restore...
+All projects are up-to-date for restore.
+dotnet-cloud-run-hello-world -> /src/bin/Debug/net7.0/dotnet-cloud-run-hello-world.dll
+dotnet-cloud-run-hello-world -> /out/
+---> f2cf5502c78b
+Step 10/14 : FROM base AS final
+
+---> 7b06e80d80c0
+Step 11/14 : RUN apk update     && apk add unzip procps
+---> Using cache
+ ---> 1ea07319db98
+Step 12/14 : WORKDIR /src
+---> Using cache
+ ---> 431192a28998
+Step 13/14 : COPY --from=publish /out .
+
+---> 0b7cf9f0e9b2
+Step 14/14 : CMD ASPNETCORE_URLS=http://*:$PORT dotnet dotnet-cloud-run-hello-world.dll
+---> Running in e027669a8912
+---> c255a6cabd04
+Successfully built c255a6cabd04
+Successfully tagged gcr.io/ecommerce-430516/hello-world-1:latest
+The push refers to repository [gcr.io/ecommerce-430516/hello-world-1]
+17767243a7ee: Preparing
+ad1ea21bec32: Preparing
+6910687b3c59: Preparing
+ad8ad0c27016: Preparing
+ded98abd779b: Preparing
+041b6f6a3cb2: Preparing
+d4fc045c9e3a: Preparing
+041b6f6a3cb2: Waiting
+d4fc045c9e3a: Waiting
+6910687b3c59: Layer already exists
+ad8ad0c27016: Layer already exists
+ded98abd779b: Layer already exists
+ad1ea21bec32:
+Layer already exists
+d4fc045c9e3a: Layer already exists
+041b6f6a3cb2: Layer already exists
+17767243a7ee: Pushed
+latest: digest: sha256:6b1096397dbc6b5410b84541f774ed84db5681ee46af339a291ab48147985114 size: 1790
+Build [gcr.io/ecommerce-430516/hello-world-1] succeeded
+Executing Gcloud Run Deploy
+Running gcloud command: run deploy hello-world-1 --project ecommerce-430516 --image gcr.io/ecommerce-430516/hello-world-1 --client-name Cloud Code for VS Code --client-version 2.14.0 --platform managed --region us-central1 --allow-unauthenticated --port 8080 --cpu 1 --memory 256Mi --concurrency 80 --timeout 300 --clear-env-vars
+Deploying container to Cloud Run service [hello-world-1] in project [ecommerce-430516] region [us-central1]
+Deploying...
+Setting IAM Policy......................done
+Creating Revision......................................................................done
+Routing traffic.....done
+Done.
+Service [hello-world-1] revision [hello-world-1-00002-tq4] has been deployed and is serving 100 percent of traffic.
+Service URL: https://hello-world-1-vny2zcitvq-uc.a.run.app

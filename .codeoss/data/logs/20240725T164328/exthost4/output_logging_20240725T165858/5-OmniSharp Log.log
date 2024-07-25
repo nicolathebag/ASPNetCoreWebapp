@@ -1,0 +1,51 @@
+Starting OmniSharp server at 7/25/2024, 4:59:03 PM
+    Target: /home/nlosacco4
+
+OmniSharp server started with .NET 8.0.107
+.
+    Path: /home/nlosacco4/.codeoss/extensions/muhammad-sammy.csharp-2.34.12-universal/.omnisharp/1.39.11-net6.0/OmniSharp.dll
+    PID: 8825
+
+[info]: OmniSharp.Stdio.Host
+        Starting OmniSharp on Unknown 0.0 (Unknown)
+[info]: OmniSharp.Services.DotNetCliService
+        Checking the 'DOTNET_ROOT' environment variable to find a .NET SDK
+[info]: OmniSharp.Services.DotNetCliService
+        Using the 'dotnet' on the PATH.
+[info]: OmniSharp.Services.DotNetCliService
+        DotNetPath set to dotnet
+[info]: OmniSharp.MSBuild.Discovery.MSBuildLocator
+        Located 3 MSBuild instance(s)
+            1: .NET Core SDK 8.0.107 17.8.5 - "/usr/lib/dotnet/sdk/8.0.107"
+            2: .NET Core SDK 7.0.119 17.4.8 - "/usr/lib/dotnet/sdk/7.0.119"
+            3: .NET Core SDK 6.0.132 17.0.3 - "/usr/lib/dotnet/sdk/6.0.132"
+[info]: OmniSharp.MSBuild.Discovery.MSBuildLocator
+        Registered MSBuild instance: .NET Core SDK 8.0.107 17.8.5 - "/usr/lib/dotnet/sdk/8.0.107"
+[info]: OmniSharp.WorkspaceInitializer
+        Invoking Workspace Options Provider: OmniSharp.Roslyn.CSharp.Services.CSharpFormattingWorkspaceOptionsProvider, Order: 0
+[info]: OmniSharp.Cake.CakeProjectSystem
+        Detecting Cake files in '/home/nlosacco4/'.
+[info]: OmniSharp.Cake.CakeProjectSystem
+        Did not find any Cake files
+[info]: OmniSharp.MSBuild.ProjectSystem
+        No solution files found in '/home/nlosacco4/'
+[info]: OmniSharp.MSBuild.ProjectManager
+        Queue project update for '/home/nlosacco4/hello-world-1/dotnet-cloud-run-hello-world.csproj'
+[info]: OmniSharp.Script.ScriptProjectSystem
+        Detecting CSX files in '/home/nlosacco4/'.
+[info]: OmniSharp.Script.ScriptProjectSystem
+        Did not find any CSX files
+[info]: OmniSharp.WorkspaceInitializer
+        Configuration finished.
+[info]: OmniSharp.Stdio.Host
+        Omnisharp server running using Stdio at location '/home/nlosacco4/' on host 8660.
+[info]: OmniSharp.MSBuild.ProjectManager
+        Loading project: /home/nlosacco4/hello-world-1/dotnet-cloud-run-hello-world.csproj
+[info]: OmniSharp.MSBuild.ProjectManager
+        Successfully loaded project file '/home/nlosacco4/hello-world-1/dotnet-cloud-run-hello-world.csproj'.
+[info]: OmniSharp.MSBuild.ProjectManager
+        Adding project '/home/nlosacco4/hello-world-1/dotnet-cloud-run-hello-world.csproj'
+[info]: OmniSharp.MSBuild.ProjectManager
+        Update project: dotnet-cloud-run-hello-world
+[info]: OmniSharp.Roslyn.CSharp.Services.Diagnostics.CSharpDiagnosticWorkerWithAnalyzers
+        Solution initialized -> queue all documents for code analysis. Initial document count: 8.
