@@ -1,3 +1,4 @@
+using CloudSql;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using WebApplication1.Data;
@@ -9,8 +10,8 @@ namespace WebApplication1
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddDbContext<CartItemContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("CartItemContext") ?? throw new InvalidOperationException("Connection string 'CartItemContext' not found.")));
-
+                options.UseSqlServer(SqlServerTcp.NewSqlServerTCPConnectionString().ConnectionString ?? throw new InvalidOperationException("Connection string 'CartItemContext' not found.")));
+            
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 

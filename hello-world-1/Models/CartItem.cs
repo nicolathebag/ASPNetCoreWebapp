@@ -1,4 +1,6 @@
-﻿namespace WebApplication1.Models
+﻿using System.Globalization;
+
+namespace WebApplication1.Models
 {
     public class CartItem
     {
