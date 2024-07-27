@@ -11,7 +11,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0-alpine AS build
 WORKDIR /src
 COPY . .
 RUN dotnet restore WebApplication1.csproj
-RUN dotnet build "./WebApplication1.csproj" -c Debug -o /out
+RUN dotnet build "WebApplication1.csproj" -c Debug -o /out
 
 FROM build AS publish
 RUN dotnet publish WebApplication1.csproj -c Debug -o /out
