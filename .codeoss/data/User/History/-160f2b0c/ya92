@@ -1,0 +1,24 @@
+test
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	new file:   .gitignore
+#	new file:   hello-world-1/Data/SqlServerTCP.cs
+#	modified:   hello-world-1/Dockerfile
+#	modified:   hello-world-1/Models/CartItem.cs
+#	modified:   hello-world-1/Program.cs
+#	new file:   hello-world-1/README.md
+#	new file:   hello-world-1/Startup.cs
+#	modified:   hello-world-1/Views/CartItems/Edit.cshtml
+#	modified:   hello-world-1/WebApplication1.csproj
+#	modified:   hello-world-1/appsettings.json
+#	new file:   hello-world-1/certs/.gitkeep
+#	new file:   hello-world-1/certs/server-ca.pem
+#
+# Untracked files:
+#	gopath/
+#
