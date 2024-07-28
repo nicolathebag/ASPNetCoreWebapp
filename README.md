@@ -1,8 +1,8 @@
-Aspnet MVC web application deploy on clod run service 
+# Aspnet MVC web application deploy on clod run service 
 
 
 
-Web application development 
+## Web application development 
 
 
 
@@ -20,7 +20,7 @@ Main changes made on ASPNet Core web application of Visual Studio starter projec
 
 
 
-GCP configuration
+## GCP configuration
 
 
 
@@ -40,7 +40,7 @@ And since it's not possible to connect an SQL server to a Cloud run service thro
 
 
 
-Build and deploy on Dockerfile
+## Build and deploy on Dockerfile
 
 
 
@@ -56,7 +56,7 @@ These steps are implemented in Dockerfile.
 
 
 
-CI/CD Trigger on GitHub 
+## CI/CD Trigger on GitHub 
 
 
 
