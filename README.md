@@ -60,7 +60,8 @@ These steps are implemented in Dockerfile.
 
 
 
-Once uploaded the project on a GitHub repo I set a CI/CD a trigger on GCP Cloud run instance setting also Dockerfile as Build step configuration.
+Once uploaded the project on a GitHub repo I set a CI/CD trigger on my GCP Cloud run instance.
+As a custom build step I set the Dockerfile.
 
 
 
