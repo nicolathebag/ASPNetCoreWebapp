@@ -16,7 +16,7 @@ The main changes applied on ASPNet Core web application of Visual Studio starter
 
 * changed Home Layout title
 
-* added connection string builder getting them from environment vars
+* added connection string builder function that get values them from environment (from GCP dotnet sample projects)
 
 
 
