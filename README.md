@@ -64,9 +64,6 @@ Once uploaded the project on a GitHub repo I set a CI/CD a trigger on GitHub on 
 
 
 
-Repo : https://github.com/nicolathebag/nlosacco4/tree/main
-
-
 
 Deployed web application:
 
