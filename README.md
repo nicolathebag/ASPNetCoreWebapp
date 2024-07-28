@@ -30,7 +30,7 @@ It has been used GCP platform to build and deploy web application.
 
 On GCP platform I created
 
-* a Cloud run service instance , adding env vars 
+* a Cloud run service instance , adding env vars in order to connect to a
 
 * SQL server instance 
 
