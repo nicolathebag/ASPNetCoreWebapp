@@ -14,9 +14,9 @@ The main changes applied on ASPNet Core web application of Visual Studio starter
 
 * added CartItem model , CRUD views and Controller scaffold classes,
 
-* changed Home Layout title
+* changed Home Layout title,
 
-* added connection string builder function that get values them from environment (from GCP dotnet sample projects)
+* added connection string builder function that get values them from environment (from GCP dotnet sample projects).
 
 
 
