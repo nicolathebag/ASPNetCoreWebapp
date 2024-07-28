@@ -10,7 +10,7 @@ This is a basic web application to read store and edit a bucket of Items, preser
 
 
 
-The main changes applied on ASPNet Core web application of Visual Studio ASPNet mvc starter project are:
+The main changes applied on ASPNet Core web application of Visual Studio starter project are:
 
 * added CartItem model , CRUD views and Controller scaffold classes,
 
