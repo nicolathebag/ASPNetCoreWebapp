@@ -6,7 +6,7 @@
 
 
 
-As a POC it has been developed a web application to read store and edit a bucket of objects.
+This is a basic web application to read store and edit a bucket of Items, preserving data on a DB.
 
 
 
