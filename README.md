@@ -12,11 +12,11 @@ As a POC it has been developed a web application to read store and edit a bucket
 
 Main changes made on ASPNet Core web application of Visual Studio starter projects:
 
-	• added CartItem model , CRUD views and Controller scaffold classes,
+* added CartItem model , CRUD views and Controller scaffold classes,
 
-	• changed Home Layout title
+* changed Home Layout title
 
-	• added connection string builder getting them from environment vars
+* added connection string builder getting them from environment vars
 
 
 
@@ -30,13 +30,13 @@ It has been used GCP platform to build and deploy web application.
 
 On GCP platform I created
 
-	• a Cloud run service instance , adding env vars 
+* a Cloud run service instance , adding env vars 
 
-	• SQL server instance 
+* SQL server instance 
 
 And since it's not possible to connect an SQL server to a Cloud run service through public IP 
 
-	• Vpc subnet and connector instances
+* Vpc subnet and connector instances
 
 
 
