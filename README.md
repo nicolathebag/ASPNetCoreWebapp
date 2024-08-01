@@ -54,6 +54,12 @@ It's been used dotnet command lines functionalities on the windows container to 
 
 These steps are implemented in Dockerfile.
 
+These steps :
+  RUN apk add icu-libs
+  ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=false
+
+to solve CultureInfo issues of aspnet framework 
+
 
 
 ## CI/CD Trigger on GitHub 
