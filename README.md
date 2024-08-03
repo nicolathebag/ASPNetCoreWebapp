@@ -75,3 +75,5 @@ As a custom build step I set the Dockerfile.
 Deployed web application:
 
 https://quickstart-service-qsau3ru34q-uc.a.run.app/
+
+added swagger on root page
