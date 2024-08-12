@@ -1,4 +1,4 @@
-# Aspnet MVC web application deploy on clod run service 
+# Aspnet MVC web application deploy on clod run service using a sql instance server
 
 
 
@@ -6,11 +6,12 @@
 
 
 
-This is an example of a basic web application to read store and edit a bucket of Items, preserving data on a DB.
+This is an example of a basic web application to read store and edit a bucket of Items, preserving data on a SQL server instance.
+
+Follow this guide to develop your Web application https://medium.com/@srivi18.2002/building-a-movie-lookup-application-using-asp-net-core-web-api-and-react-528cfb0c7dec 
 
 
-
-The main changes applied on ASPNet Core web application of Visual Studio starter project are:
+In syntesis the main changes applied on ASPNet Core web application of Visual Studio starter project are these:
 
 * added CartItem model , CRUD views and Controller scaffold classes,
 
