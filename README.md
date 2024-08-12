@@ -6,7 +6,7 @@
 
 
 
-This is a basic web application to read store and edit a bucket of Items, preserving data on a DB.
+This is an example of a basic web application to read store and edit a bucket of Items, preserving data on a DB.
 
 
 
